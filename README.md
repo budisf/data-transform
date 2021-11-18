@@ -9,6 +9,12 @@ System ini merupakan system untuk melakukan transaksi pembelian barang. Terdapat
 - windows terminal
 - wsl 2 
 
+Silahkan kunjungi link berikut untuk link image docker 
+
+https://hub.docker.com/r/budisf/dbotest/tags
+
+<b>Atau</b>
+
 Silahkan start docker dan buat folder dengan nama docker terus jalankan di command prompt.
 
 git clone https://github.com/Laradock/laradock.git
