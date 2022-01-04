@@ -5,6 +5,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController; 
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ManageDataController;
+use App\Http\Controllers\NominatifMentorController;
+use App\Http\Controllers\MergeSheetController;
+use App\Http\Controllers\MergeSheet;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,4 +58,15 @@ Route::group([
     Route::post('/update', [OrderController::class, 'update']);
     Route::post('/detail', [OrderController::class, 'show']);
     Route::post('/delete', [OrderController::class, 'destroy']);    
+});
+
+Route::group([
+    'middleware' => 'api',
+    'prefix' => 'import'
+
+], function ($router) {
+    Route::post('/reimbursement', [ManageDataController::class, 'import']); 
+    Route::post('/mentor-msib', [NominatifMentorController::class, 'import']); 
+    Route::post('/merge-sheet', [MergeSheetController::class, 'import']); 
+    Route::post('/merge-sheet-dua', [MergeSheet::class, 'import']); 
 });
